@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+
+        .intro{
+            background-color: #ffffff;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 85vh;
+            text-align: center;
+        }
+        .container1{
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+        body{
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .intro-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            color:antiquewhite
+        }
+        .intro-text h1{
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .intro-text p{
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .intro-text button{
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .intro-text button:hover{
+            background-color: #0056b3;
+        }
+        .intro-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* Tools Section */
+
+        .tools{
+            margin-top: 170px;
+        }
+        .tool-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.tool-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tool-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+        /* Projects Section */
+        .projects{
+            padding: 50px 0;
+            background-color: #f8f8f8;
+        }
+        .projects h2{
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .projects .row{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .projects .col-md-4{
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .projects .col-md-4 img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .projects .col-md-4 h3{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .projects .col-md-4 p{
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .projects .col-md-4 button{
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .projects .col-md-4 button:hover{
+            background-color: #0056b3;
+        }
+
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f2e22e;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #666;
+}
+
+.hire {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hire:hover {
+  background-color: #0056b3;
+}
+
+.Work{
+  display:grid;
+  grid-template-rows: .5fr .4fr 2fr;
+  grid-template-columns: 1fr 1fr;
+  width: 91.5%;
+  height: 600px;
+  margin-left: 70px;
+}
+
+.Work>h3{
+  grid-row-start: 2;
+}
+.Work>p{
+  font-size: 17px;
+  grid-row-start: 3;
+}
+
+.Work>img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: span 4;
+  margin-left: 60px;
+}
+.Work>p>button{
+  display: block;
+  margin-top: 15px;
+}
+
+.display{
+  width: 91.5%;
+  height: 850px;
+
+}
+
+.bg{
+  background-image: url("assets/MacBook\ Air\ -\ 2@2x.png");
+  background-size: 1450px;
+}
+
+.Work2{
+  width: 100%;
+  height: 650px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('assets/leonardo\ intro.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.intro{
+  background-color: #ffffff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.Work2>h2{
+  font-size: 20px;
+
+}
+.Work2>.container{
+  display:grid;
+  grid-template-rows:.5fr 2fr;
+  grid-template-columns: 1fr 1fr;
+  width: 91.5%;
+  height: 100%;
+
+}
+.title02{
+  display: flex;
+  align-items: center;
+  color: aliceblue;
+}
+
+.content02{
+  grid-column-start: 1;
+  grid-row-start: 2;
+  color: #fff;
+}
+
+.prototype{
+  display: flex;
+  align-items: center;
+  grid-row: span 2;
+}
+
+
+/* Add this to the top of your CSS file */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsive styles */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  .Work {
+    grid-template-columns: 1fr 1fr;
+  }
+  .Work2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Medium screens (laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 992px;
+  }
+  .Work {
+    grid-template-columns: 1fr;
+  }
+  .Work2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small screens (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 768px;
+  }
+  .Work {
+    grid-template-columns: 1fr;
+  }
+  .Work2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small screens (mobiles) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+  .Work {
+    grid-template-columns: 1fr;
+  }
+  .Work2 {
+    grid-template-columns: 1fr;
+  }
+  .intro-text {
+    font-size: 16px;
+  }
+  .intro-text h1 {
+    font-size: 24px;
+  }
+  .intro-text p {
+    font-size: 14px;
+  }
+  .Work2 .title02 {
+    font-size: 18px;
+  }
+  .Work2 .content02 {
+    font-size: 14px;
+  }
+}
+
+
+/* Contact Section */
+.contact {
+  padding-top: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.contact h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-item a {
+  font-size: 18px;
+  color: #666;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #333;
+}
+
+.hire {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hire:hover {
+  background-color: #0056b3;
+}
+
+.social-links {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-list li {
+  margin: 20px;
+}
+
+.social-list a {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-list a:hover {
+  color: #007bff;
+}
+
+a{
+  text-decoration: none;
+  color: aliceblue;
+}
+
+
+#name{
+            width: 315px;
+        }
+        #email{
+            width: 315px;
+        }
+        #phone{
+            width: 315px;
+        }
+        #subject{
+            width: 315px;
+        }
+        #message{
+            width: 660px;
+        }
+
+
+        .contact-section {
+            width: 100%;
+            background-color: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+
+        .contact-info {
+          display: flex;
+            background-color: #444;
+            padding: 1rem;
+            border-radius: 8px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .contact-info p, .contact-info a {
+            margin: 0;
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .contact-info a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: #ffc107;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .contact-info a:hover {
+            background-color: #e0a800;
+        }
+
+        .contact-form {
+            background-color: #444;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 460px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .contact-form .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .contact-form .form-group input, 
+        .contact-form .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #666;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .contact-form .form-group textarea {
+            height: 100px;
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #ffc107;
+            color: #333;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e0a800;
+        }
+
+        .contact-social {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .contact-social a {
+            margin: 0 0.5rem;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .contact-social a:hover {
+            color: #fff;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+
+/* Add this to the bottom of your CSS file */
+
+
+
+    </style>
+</head>
+<body>
+    <section class="Nav">
+        <div class="main">
+          <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="mb-auto">
+              <div class="container1">
+                <div class="logo-container">
+                  <h2 class="float-md-start mb-0 logo" style="color: aliceblue;">Resume</h2>
+                </div>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                  <ul class="nav-list">
+                    <li class="nav-item">
+                      <a class="nav-link fw-bold py-1 px-0 active me-5" aria-current="page" href="index.html" style="color: aliceblue;">
+                        <span class="nav-icon">
+                          <i class="fas fa-home"></i>
+                        </span>
+                        Home
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link fw-bold py-1 px-0 me-5" href="#" id="about" style="color: aliceblue;">
+                        <span class="nav-icon">
+                          <i class="fas fa-wrench"></i>
+                        </span>
+                        Tools
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link fw-bold py-1 px-0 me-5" href="#" id="skills" style="color: aliceblue;">
+                        <span class="nav-icon">
+                          <i class="fas fa-project-diagram"></i>
+                        </span>
+                        Projects
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link fw-bold py-1 px-0 me-5" href="#" id="works" style="color: aliceblue;">
+                        <span class="nav-icon">
+                          <i class="fas fa-compass"></i>
+                        </span>
+                        Explore
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link fw-bold py-1 px-0 me-5 contact-nav" href="#" id="contact" style="color: aliceblue;">
+                        <span class="nav-icon">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                        Contact
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <button class="hire">
+                        <span class="nav-icon">
+                          <i class="fas fa-handshake"></i>
+                        </span>
+                        Hire Me
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </header>
+          </div>
+        </div>
+      </section>
+    
+
+    <section class="intro" >
+        <div class="intro-img" style="background-image: url('assets/wrapitmockup.png');"></div>
+        <div class="intro-text">
+            <h1>I design and develop beautiful and functional websites.</h1>
+            <p>I'm a passionate UI/UX designer with a focus on creating user-friendly and visually appealing interfaces. </p>
+            <button><a href="https://bit.ly/3VdeE8y"> Portfolio </a></button>
+        </div>
+    </section>
+
+    <section class="tools" id="tools">
+        <div class="container">
+          <h2>My Toolbelt</h2><br><br>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="tool-card">
+                <img src="assets/figma.png" alt="Figma" class="tool-icon">
+                <h3>Figma</h3>
+                <p>Figma is my go-to tool for designing user interfaces, prototypes and Animations along with Case Studies</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="tool-card">
+                <img src="assets/Canva_logo..png" alt="Canva" class="tool-icon">
+                <h3>Canva</h3>
+                <p>Canva is essential for image editing, manipulation, and creating high-quality visuals.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="tool-card">
+                <img src="assets/Adobe Illustrator CC Old.png" alt="Adobe XD" class="tool-icon">
+                <h3>Adobe XD</h3>
+                <p>Adobe XD is my choice for designing user interfaces and creating interactive prototypes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><br><br>
+
+
+      <section id="project-section">
+
+        <div class="container Work">
+          
+          <h2>What's in my Portfolio?</h2>
+          <h3>01 Wrap It Case Study</h3>
+
+          <p>
+            Introducing Wrap It, the future of package delivery. Utilizing cutting-edge drone technology, Wrap It guarantees swift, secure, and efficient deliveries. Our app allows users to place orders, schedule time slots, and track their parcels in real time, eliminating the delays and inefficiencies of traditional delivery methods. Experience unparalleled convenience and reliability with Wrap It, where your packages are always on time and within sight.<br><br>
+            Wrap It not only ensures timely deliveries but also prioritizes the safety and security of your packages. Our drones are equipped with advanced navigation systems and secure compartments, ensuring that your parcels are delivered without damage or tampering. The app’s user-friendly interface makes it easy to manage deliveries, providing notifications and updates at every stage. Join the future of delivery services with Wrap It and enjoy the peace of mind that comes with knowing your packages are in good hands.
+
+            <button class="btn btn-warning"><a href="https://drive.google.com/file/d/16gyYf8C9rjwp_6MUjohf-kj-3FzTu1n0/view?usp=sharing">Case Study!</a></button>
+          </p>
+
+          <img src="./assets/WrapiIt mockup.png">
+
+
+
+        </div>
+
+      </section>
+     
+
+      <section class="bg">
+
+        <div class="container display">
+
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="Work2 intro">
+
+          <div class="container">
+
+           <div class="title02">  <h2>02 Leonardo AI Clone</h2></div>
+           <div class="content02">
+
+            <p>Introducing Leonardo AI, the pinnacle of creativity in artificial intelligence. Specializing in image generation and visual content creation, Leonardo AI transforms your ideas into stunning visuals with unparalleled precision. Whether you need high-quality graphics, unique artwork, or realistic renderings, Leonardo AI delivers exceptional results, making your creative visions come to life.<br><br>
+
+              Leonardo AI goes beyond traditional design tools by offering intelligent, adaptive solutions tailored to your artistic needs. With advanced algorithms and an intuitive interface, Leonardo AI learns from your preferences, ensuring continuous improvement and innovation in every project. Elevate your creative process with Leonardo AI, the ultimate companion for artists and designers seeking to harness the power of artificial intelligence.<br><br>
+              Experience the future of creativity with Leonardo AI by exploring our interactive UI prototype. Discover how easy it is to generate stunning visuals and bring your ideas to life with just a few clicks.<br><br>
+
+              <button class="btn btn-info"><a href="https://www.figma.com/proto/BFa02FN98TJvY7cG2bxQ8t/Untitled?page-id=0%3A1&node-id=57-2383&viewport=170%2C342%2C0.12&t=mhZyrUPuA9OlTy1T-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A15">Explore UI</a></button>
+            </p>
+        
+           </div>
+           <div class="prototype">
+            <img src="assets/leoWeb.png" width="600px">
+
+           </div>
+         
+          </div>
+        </div>
+
+      </section>
+
+    <section class="contact-section pos">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item" align="center">
+                    <h3>Location:</h3>
+                    <p>Delhi, India</p>
+                </div>
+                <div class="contact-item" align="center">
+                    <h3>Email:</h3>
+                    <p>agrawalchiragnsut22@gmail.com</p>
+                </div>
+                <div class="contact-item"align="center">
+                    <h3>Portfolio:</h3>
+                    <a href="https://bit.ly/3VBW6iN">Click Me</a>
+                </div>
+                <div class="contact-item">
+                  <h3>LinkedIn:</h3>
+                  <a href="https://www.linkedin.com/in/chirag-agrawal-15b47b291/">LinkedIn</a>
+              </div>
+            </div>
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="cc9b9ef0-7a0d-45c9-a7e5-5dee882bf4c3">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Submit Message</button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+   
+
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="UI.js"></script>
+</body>
+</html>
